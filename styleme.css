@@ -1,9 +1,10 @@
+body {
+  /* background-color: #1d1145; */
+  background-image: linear-gradient(#1d1145, #1d1145);
+}
+
 /* the div that contain all page content */
 .all {
-  background-image: url(./axel-ruffini-iulnjpZyWnc-unsplash.jpg);
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: cover;
   display: grid;
   grid-template-columns: 1fr 3.5fr 1fr;
   grid-gap: 10px 20px;
@@ -11,10 +12,10 @@
     "header header header"
     "content content side"
     "footer footer footer";
-  grid-template-rows: 0.5fr 3fr 0.5fr;
+  grid-template-rows: 1fr 3.5fr 1fr;
   margin-right: auto;
   margin-left: auto;
-  /* padding: 1em; */
+  padding: 1em;
   height: 100vh;
   width: 100vw;
   color: aliceblue;
@@ -23,7 +24,6 @@
 
 /* welcome */
 .header {
-  /* border: 1px solid #1d1145; */
   grid-area: header;
   background-color: #1d1145;
   font-family: "Monaco";
@@ -33,24 +33,23 @@
 
 /* for main content */
 .content {
-  /* border: 1px solid #e76d89; */
+  background-image: url(./axel-ruffini-iulnjpZyWnc-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
   grid-area: content;
   display: grid;
-  /* background-image: linear-gradient(#f2a1a1, #e76d89); */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr 1fr; */
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: 3fr 0.5fr;
   grid-template-areas:
-    "bio ."
-    "more .";
+    "img bio ."
+    "more more more";
 }
 
 /* for skills */
 .side {
-  /* border: 1px solid #0db4b9; */
   grid-area: side;
-  /* background-color: #0db4b9; */
-  /* font-family: Arial, Helvetica, sans-serif; */
+  background-image: linear-gradient(#3f1d83, #1d1145);
 }
 
 /* for contact info */
@@ -63,20 +62,32 @@
   padding: 2em;
 }
 
+/* profile img div */
 .photo {
   text-align: left;
-  grid-area: photo;
 }
 
+/* my profile img */
 img {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  border: 1px solid #e76d89;
+  grid-area: img;
   margin: 10px;
-  /* margin-left: auto; */
+  border: 2px solid black;
+  border-radius: 50%;
+  display: block;
+  width: 200px;
+  height: 200px;
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
 }
 
+img:hover {
+  border: 3px solid #efcf2f;
+  width: 350px;
+  height: 350px;
+  transform: rotate(180deg);
+}
+/* done */
+
+/* contact info a tags */
 p a {
   background-color: aliceblue;
   border: 2px solid aliceblue;
@@ -85,6 +96,7 @@ p a {
   color: black;
   text-decoration-line: none;
 }
+/* done */
 
 h2 a {
   text-decoration-line: none;
@@ -94,15 +106,17 @@ h2 a {
 
 .bio {
   grid-area: bio;
-  margin: auto;
+  margin-top: 2px;
   text-align: left;
-  /* background-color: #e76d89; */
 }
 
 .more-bio {
   grid-area: more;
   margin: auto;
   font-size: large;
+  padding-left: 5px;
+  text-align: center;
+  background-color: black;
 }
 
 /* Make my contact info Links hover */
@@ -111,10 +125,28 @@ p a:hover {
   color: aqua;
 }
 
+/* the link that take user back to the main page */
 header a {
   text-decoration-line: none;
   text-align: left;
+  position: relative;
+  right: 650px;
+  background-color: aliceblue;
+  border-radius: 20px;
+  font-size: larger;
+  font-weight: 700;
+  padding: 5px;
+  margin-right: 40px;
+  border: 3px solid black;
 }
+
+header a:hover {
+  color: aqua;
+  width: 30px;
+  height: 40px;
+  background-color: #fff5d7;
+}
+/* done */
 
 /* Make the Header text Blink */
 .blink {

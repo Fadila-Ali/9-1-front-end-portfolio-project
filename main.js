@@ -20,28 +20,26 @@ form.addEventListener("submit", (event) => {
     .then((resJson) => {
       console.log(resJson);
 
-      // this is where I want to display the "aside" content
-      // const side = document.querySelector(".side");
-      // side.innerHTML = "";
-
       // grab the ul inside of the "aside"
       // create a list and give it the value of alt spellings
-      const ul = document.querySelector("ul");
+      // const ul = document.querySelector("ul");
+      const other = document.querySelector(".otherSpellings");
+      other.innerHTML = "";
       let str = resJson[0].altSpellings.map((item) => item).join(",");
       const arr = str.split(",");
       for (let i = 0; i < arr.length; i++) {
         const otherSpellings = document.createElement("li");
         otherSpellings.innerText = arr[i];
-        ul.appendChild(otherSpellings);
+        // ul.appendChild(otherSpellings);
+        other.appendChild(otherSpellings);
       }
 
       // list done
 
       // this is where I want to display the main content
       const leftMain = document.querySelector(".left");
-      const rightMain = document.querySelector(".right");
       leftMain.innerHTML = "";
-      rightMain.innerHTML = "";
+
       // get the flag of country
       const countryFlag = document.createElement("img");
       countryFlag.setAttribute("src", `${resJson[0].flags.png}`);
@@ -58,6 +56,10 @@ form.addEventListener("submit", (event) => {
       countryCapital.innerHTML = `<strong>Capital City(s): </strong>${resJson[0].capital}`;
       leftMain.append(countryCapital);
 
+      // aside 2
+      const sideTwo = document.querySelector(".side2");
+      sideTwo.innerHTML = "";
+
       // get coat of arms
       const coatOfArms = document.createElement("img");
       coatOfArms.setAttribute("src", `${resJson[0].coatOfArms.png}`);
@@ -67,7 +69,7 @@ form.addEventListener("submit", (event) => {
       );
       const coatOfArmsParagraph = document.querySelector("p");
       coatOfArmsParagraph.innerHTML = `<strong>The Coat of Arms of ${resJson[0].name.common}`;
-      rightMain.append(coatOfArms, coatOfArmsParagraph);
+      sideTwo.append(coatOfArms, coatOfArmsParagraph);
 
       // get continent in which country is located
       const countryContinent = document.createElement("p");
@@ -106,7 +108,7 @@ form.addEventListener("submit", (event) => {
         languagesLi.innerHTML = languages[i];
         languagesUl.appendChild(languagesLi);
       }
-      rightMain.append(languagesP, languagesUl);
+      sideTwo.append(languagesP, languagesUl);
     })
     .catch((err) => console.log(err));
 });
