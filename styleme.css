@@ -111,6 +111,11 @@ p a:hover {
   color: aqua;
 }
 
+header a {
+  text-decoration-line: none;
+  text-align: left;
+}
+
 /* Make the Header text Blink */
 .blink {
   animation: blinker 3s linear infinite;

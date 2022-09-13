@@ -1,11 +1,12 @@
 body {
-  border: 1px solid yellowgreen;
+  /* border: 1px solid yellowgreen; */
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #dfdce3;
 }
 
 .all {
-  border: 1px solid black;
   display: grid;
-  grid-gap: 5px 5px;
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-rows: 1fr 6fr 1fr;
   grid-template-areas:
@@ -15,39 +16,83 @@ body {
   margin-left: auto;
   margin-right: auto;
   height: 100vh;
+  background-color: #bf4aa8;
   /* padding: 1em; */
-  /* max-width: 75rem; */
+  /* max-width: 100rem; */
+  border-radius: 20px;
+  border: 2px solid #bf4aa8;
 }
 
 .header {
   grid-area: header;
-  border: 1px solid blue;
+  border-radius: 50px;
+  border: 2px solid;
+  border: 2px solid #269ccc;
+  background-color: #51d0de;
 }
 
 .side {
   grid-area: side;
-  border: 1px solid green;
+  margin: 5px;
 }
 
 .main {
   grid-area: main;
-  border: 1px solid red;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "left right";
-}
-
-.footer {
-  grid-area: footer;
-  border: 1px solid palevioletred;
+  text-align: center;
 }
 
 .left {
   grid-area: left;
-  border: 1px solid yellow;
+  margin: 10px;
 }
 
 .right {
   grid-area: right;
-  border: 1px solid orange;
+}
+
+.right img {
+  height: 250px;
+  width: 300px;
+}
+
+.left {
+  height: 500px;
+  width: 900px;
+}
+
+header div form {
+  text-align: center;
+}
+
+a {
+  border: 2px solid #091f36;
+  border-radius: 20px;
+  background-color: #091f36;
+  text-decoration-line: none;
+  font-size: larger;
+  color: aliceblue;
+  padding-right: 2px;
+  padding-left: 2px;
+  margin: 10px;
+}
+
+a:hover {
+  background-color: aliceblue;
+  color: aqua;
+  font-weight: 700;
+}
+
+#country {
+  border-radius: 50px;
+}
+
+/* #country:hover {
+
+} */
+
+#submit-country {
+  border-radius: 50px;
 }
