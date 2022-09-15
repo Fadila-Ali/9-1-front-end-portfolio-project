@@ -1,160 +1,229 @@
 body {
-  /* background-color: #1d1145; */
-  background-image: linear-gradient(#1d1145, #1d1145);
+  height: 100vh;
+  text-align: center;
+  color: black;
+  font-family: "Monaco";
+  background-color: #ffffff;
 }
 
-/* the div that contain all page content */
+/* a div that contain all that is in the body */
 .all {
   display: grid;
-  grid-template-columns: 1fr 3.5fr 1fr;
-  grid-gap: 10px 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.1fr 0.5fr 0.5fr 0.5fr;
+  grid-gap: 10px 10px;
   grid-template-areas:
-    "header header header"
-    "content content side"
-    "footer footer footer";
-  grid-template-rows: 1fr 3.5fr 1fr;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 1em;
+    "header header header header"
+    "profile . more ."
+    "profile bio more skills"
+    ". bio . skills";
   height: 100vh;
-  width: 100vw;
-  color: aliceblue;
-  font-family: "Monaco";
 }
 
-/* welcome */
-.header {
+/*---------------------------------------------*/
+
+/* header */
+header {
   grid-area: header;
-  background-color: #1d1145;
-  font-family: "Monaco";
-  color: aliceblue;
-  text-align: center;
-}
-
-/* for main content */
-.content {
-  background-image: url(./axel-ruffini-iulnjpZyWnc-unsplash.jpg);
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: cover;
-  grid-area: content;
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
-  grid-template-rows: 3fr 0.5fr;
-  grid-template-areas:
-    "img bio ."
-    "more more more";
-}
-
-/* for skills */
-.side {
-  grid-area: side;
-  background-image: linear-gradient(#3f1d83, #1d1145);
-}
-
-/* for contact info */
-.footer {
-  font-family: Arial, Helvetica, sans-serif;
-  grid-area: footer;
-  background-color: #1d1145;
-  color: aliceblue;
-  text-align: center;
-  padding: 2em;
-}
-
-/* profile img div */
-.photo {
-  text-align: left;
-}
-
-/* my profile img */
-img {
-  grid-area: img;
-  margin: 10px;
-  border: 2px solid black;
-  border-radius: 50%;
-  display: block;
-  width: 200px;
-  height: 200px;
-  transition: width 2s, height 2s, background-color 2s, transform 2s;
-}
-
-img:hover {
-  border: 3px solid #efcf2f;
-  width: 350px;
-  height: 350px;
-  transform: rotate(180deg);
-}
-/* done */
-
-/* contact info a tags */
-p a {
-  background-color: aliceblue;
-  border: 2px solid aliceblue;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: "goback blink contact";
+  background-color: #51d0de;
   border-radius: 20px;
-  margin: 4px;
-  color: black;
-  text-decoration-line: none;
-}
-/* done */
-
-h2 a {
-  text-decoration-line: none;
-  font-style: italic;
-  color: aqua;
 }
 
-.bio {
-  grid-area: bio;
-  margin-top: 2px;
-  text-align: left;
+/*---------------------------------------------*/
+
+/* link to go back to other page */
+.goback {
+  grid-area: goback;
+  text-align: justify;
+  font-size: xx-large;
+  margin-top: 25px;
+  margin-left: 5px;
 }
 
-.more-bio {
-  grid-area: more;
-  margin: auto;
-  font-size: large;
-  padding-left: 5px;
-  text-align: center;
-  background-color: black;
-}
+/*---------------------------------------------*/
 
-/* Make my contact info Links hover */
-p a:hover {
-  background-color: beige;
-  color: aqua;
-}
-
-/* the link that take user back to the main page */
 header a {
   text-decoration-line: none;
-  text-align: left;
-  position: relative;
-  right: 650px;
-  background-color: aliceblue;
-  border-radius: 20px;
-  font-size: larger;
-  font-weight: 700;
-  padding: 5px;
-  margin-right: 40px;
-  border: 3px solid black;
+  color: #bf4aa8;
+  font-size: large;
+  font-weight: 600;
+  padding: 0;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
-header a:hover {
+a:hover {
   color: aqua;
   width: 30px;
   height: 40px;
-  background-color: #fff5d7;
+  background-color: aliceblue;
 }
-/* done */
+*/
+/*---------------------------------------------*/
 
+/* welcome header */
+.welcome {
+  grid-area: welcome;
+}
 /* Make the Header text Blink */
-.blink {
+h1 {
   animation: blinker 3s linear infinite;
 }
 
 @keyframes blinker {
   50% {
     opacity: 0;
+  }
+}
+
+/*---------------------------------------------*/
+
+/* social media contact info */
+.contact {
+  grid-area: contact;
+}
+
+/*---------------------------------------------*/
+
+/* profile picture */
+.profile {
+  grid-area: profile;
+  background-image: url(./Pursuit_9.1_-_Fadila_Ali209\ copy.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.profile {
+  border: 2px solid black;
+  border-radius: 50%;
+  display: block;
+  width: 300px;
+  height: 300px;
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.profile:hover {
+  border: 3px solid #feb300;
+  width: 350px;
+  height: 350px;
+  transform: rotate(360deg);
+}
+
+/*---------------------------------------------*/
+
+/* code related bio */
+.bio {
+  grid-area: bio;
+  background-color: #f7882f;
+  border-radius: 20%;
+  width: fit-content;
+  block-size: fit-content;
+}
+
+/*---------------------------------------------*/
+
+/* other hubbies related bio */
+.more-bio {
+  grid-area: more;
+  background-color: #8bf0ba;
+  border-radius: 10%;
+  width: fit-content;
+  block-size: fit-content;
+}
+
+/*---------------------------------------------*/
+
+/* some skills */
+.skills {
+  grid-area: skills;
+  background-color: #bf4aa8;
+  border-radius: 20%;
+  width: -moz-fit-content;
+  height: -moz-fit-content;
+  block-size: fit-content;
+  text-align: center;
+}
+li {
+  list-style-type: none;
+}
+ul {
+  padding-left: 0;
+}
+
+span {
+  font-size: x-large;
+}
+
+/*---------------------------------------------*/
+
+@media (max-width: 1230px) {
+  .all {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 0.5fr 0.5fr;
+    grid-gap: 10px 10px;
+    grid-template-areas:
+      "header header"
+      "profile bio"
+      "more skills";
+    height: 100vh;
+  }
+  header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.5fr 0.1fr;
+    grid-template-areas:
+      "goback goback goback"
+      "blink blink blink"
+      "contact contact contact";
+    background-color: #51d0de;
+    border-radius: 20px;
+  }
+  .bio {
+    border-radius: 0%;
+  }
+  .more-bio {
+    border-radius: 0%;
+  }
+  .skills {
+    border-radius: 0%;
+  }
+}
+
+@media (max-width: 800px) {
+  .all {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 0.5fr 0.5fr 0.5fr;
+    grid-gap: 10px 10px;
+    grid-template-areas:
+      "header header"
+      "profile profile"
+      "bio bio"
+      "more more"
+      "skills skills";
+    height: 100vh;
+  }
+  .profile {
+    margin-left: 255px;
+  }
+  .profile {
+    border: 2px solid black;
+    border-radius: 50%;
+    display: block;
+    width: 200px;
+    height: 200px;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+  }
+
+  .profile:hover {
+    border: 3px solid #feb300;
+    width: 250px;
+    height: 250px;
+    transform: rotate(360deg);
   }
 }

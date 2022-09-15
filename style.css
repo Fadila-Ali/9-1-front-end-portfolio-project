@@ -1,49 +1,58 @@
 body {
-  /* border: 1px solid yellowgreen; */
-  /* color: aliceblue; */
   font-family: Arial, Helvetica, sans-serif;
-  /* background-color: #dfdce3; */
+  color: aliceblue;
+  background-color: #ffffff;
 }
 
 .all {
   display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-columns: 1.5fr 6fr 1fr;
   grid-template-rows: 1fr 6fr 1fr;
+  grid-gap: 10px 10px;
   grid-template-areas:
     "header header header"
-    "side main side2"
-    "footer footer footer";
+    "side main side2";
   margin-left: auto;
   margin-right: auto;
-  /* height: 100vh; */
-  /* background-color: #bf4aa8; */
-  /* padding: 1em; */
-  /* max-width: 100rem; */
   border-radius: 20px;
-  /* border: 2px solid #bf4aa8; */
+  height: 100vh;
 }
 
 .header {
   grid-area: header;
+  background-color: #000000;
   border-radius: 50px;
-  border: 2px solid;
-  /* border: 2px solid #269ccc; */
-  /* background-color: #51d0de; */
+}
+
+form {
+  margin-right: 100px;
+  color: aliceblue;
 }
 
 .side {
   grid-area: side;
-  margin: 5px;
+  margin-left: 20px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #000000;
+  border-radius: 50px;
 }
 
 .main {
   grid-area: main;
   text-align: center;
-  margin: 5px;
+  margin-top: 20px;
+  background-color: #000000;
+  border-radius: 50px;
 }
 
 .side2 {
   grid-area: side2;
+  text-align: center;
+  margin-right: 50px;
+  margin-top: 20px;
+  background-color: #000000;
+  border-radius: 50px;
 }
 
 .side2 img {
@@ -64,7 +73,13 @@ a {
   color: aliceblue;
   padding-right: 2px;
   padding-left: 2px;
-  margin: 10px;
+  text-align: center;
+}
+
+a:hover {
+  background-color: aliceblue;
+  color: aqua;
+  font-weight: 700;
 }
 
 li {
@@ -75,24 +90,17 @@ ul {
   padding-left: 0;
 }
 
-a:hover {
-  background-color: aliceblue;
-  color: aqua;
-  font-weight: 700;
-}
-
 #country {
   border-radius: 50px;
+  border: 1px solid aliceblue;
 }
-
-/* #country:hover {
-} */
 
 #submit-country {
   border-radius: 50px;
+  border: 2px solid aliceblue;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .all {
     display: grid;
     grid-template-columns: 100%;
@@ -103,11 +111,36 @@ a:hover {
       "side2"
       "side";
   }
+  form {
+    margin-right: auto;
+  }
 
   .side2 {
     text-align: center;
+    margin-right: -5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .side {
     text-align: center;
+    margin-left: -20px;
+  }
+}
+
+/* error message */
+#error {
+  text-align: center;
+  color: red;
+  display: none;
+  margin-right: 100px;
+}
+
+#error {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
 }

@@ -8,18 +8,21 @@
     <script defer src="./main.js"></script>
     <link rel="stylesheet" href="./style.css" />
     <a href="./about.html">About Me</a>
+    <br />
+    <br />
   </head>
   <body>
     <div class="all">
       <header class="header">
+        <p id="error"><strong>Please enter an existing Country!</strong></p>
         <div>
           <form>
             <label for="country">Enter a Country:</label>
             <br />
-            <input type="text" name="country-name" id="country" required />
+            <input type="text" name="country-name" id="country" />
             <br />
             <br />
-            <input type="submit" id="submit-country" />
+            <input type="submit" id="submit-country" value="Search" />
             <br />
             <br />
           </form>
@@ -27,7 +30,7 @@
       </header>
       <aside class="side">
         <div>
-          <h4>Alternative Spellings:</h4>
+          <h4></h4>
           <ul class="otherSpellings"></ul>
         </div>
       </aside>
@@ -37,12 +40,6 @@
       <aside class="side2">
         <div class="right"></div>
       </aside>
-      <!-- <footer class="footer">
-        <div>
-          <br />
-          <a href="./about.html">About Me</a>
-        </div>
-      </footer> -->
     </div>
   </body>
 </html>

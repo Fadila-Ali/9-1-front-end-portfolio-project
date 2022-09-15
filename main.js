@@ -18,11 +18,21 @@ form.addEventListener("submit", (event) => {
   fetch(url)
     .then((res) => res.json())
     .then((resJson) => {
-      console.log(resJson);
+      // this is the error message
+      const error = document.querySelector("#error");
+      if (resJson.status && resJson.status === 404) {
+        error.style.display = "block";
+        return;
+      }
+      if (userInput === "") {
+        error.style.display = "block";
+        return;
+      }
 
       // grab the ul inside of the "aside"
       // create a list and give it the value of alt spellings
-      // const ul = document.querySelector("ul");
+      const h4 = document.querySelector("h4");
+      h4.innerHTML = "Alternative Spellings:";
       const other = document.querySelector(".otherSpellings");
       other.innerHTML = "";
       let str = resJson[0].altSpellings.map((item) => item).join(",");
@@ -30,10 +40,8 @@ form.addEventListener("submit", (event) => {
       for (let i = 0; i < arr.length; i++) {
         const otherSpellings = document.createElement("li");
         otherSpellings.innerText = arr[i];
-        // ul.appendChild(otherSpellings);
         other.appendChild(otherSpellings);
       }
-
       // list done
 
       // this is where I want to display the main content
@@ -61,15 +69,15 @@ form.addEventListener("submit", (event) => {
       sideTwo.innerHTML = "";
 
       // get coat of arms
+      const coatOfArmsParagraph = document.querySelector("p");
+      coatOfArmsParagraph.innerHTML = `<strong>The Coat of Arms of ${resJson[0].name.common}`;
       const coatOfArms = document.createElement("img");
       coatOfArms.setAttribute("src", `${resJson[0].coatOfArms.png}`);
       coatOfArms.setAttribute(
         "alt",
         `The coat of arms image of ${resJson[0].name.common}`
       );
-      const coatOfArmsParagraph = document.querySelector("p");
-      coatOfArmsParagraph.innerHTML = `<strong>The Coat of Arms of ${resJson[0].name.common}`;
-      sideTwo.append(coatOfArms, coatOfArmsParagraph);
+      sideTwo.append(coatOfArmsParagraph, coatOfArms);
 
       // get continent in which country is located
       const countryContinent = document.createElement("p");
@@ -102,7 +110,6 @@ form.addEventListener("submit", (event) => {
       languagesP.innerHTML = `<strong>Languages Spoken in ${resJson[0].name.common}: </strong>`;
       const languagesUl = document.createElement("ul");
       let languages = Object.values(resJson[0].languages);
-      console.log(languages);
       for (let i = 0; i < languages.length; i++) {
         const languagesLi = document.createElement("li");
         languagesLi.innerHTML = languages[i];
