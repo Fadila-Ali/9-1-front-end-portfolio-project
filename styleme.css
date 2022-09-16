@@ -1,7 +1,7 @@
 body {
   height: 100vh;
   text-align: center;
-  color: black;
+  color: #000000;
   font-family: "Monaco";
   background-color: #ffffff;
 }
@@ -51,12 +51,12 @@ header a {
   font-size: large;
   font-weight: 600;
   padding: 0;
-  border: 3px solid #ffffff;
+  border: 1px solid #000000;
   border-radius: 10px;
   background-color: #ffffff;
 }
 
-a:hover {
+header a:hover {
   color: aqua;
   width: 30px;
   height: 40px;
@@ -97,11 +97,11 @@ h1 {
   background-repeat: no-repeat;
 }
 .profile {
-  border: 2px solid black;
+  border: 3px solid #bf4aa8;
   border-radius: 50%;
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 330px;
+  height: 330px;
   transition: width 2s, height 2s, background-color 2s, transform 2s;
 }
 
@@ -118,9 +118,20 @@ h1 {
 .bio {
   grid-area: bio;
   background-color: #f7882f;
-  border-radius: 20%;
+  border-radius: 50%;
+  text-align: center;
   width: fit-content;
   block-size: fit-content;
+  padding: 10%;
+  border: 3px solid #51d0de;
+}
+
+/* bio Pursuit a tag */
+h3 a {
+  text-decoration-line: none;
+}
+h3 a:hover {
+  color: aqua;
 }
 
 /*---------------------------------------------*/
@@ -129,9 +140,13 @@ h1 {
 .more-bio {
   grid-area: more;
   background-color: #8bf0ba;
-  border-radius: 10%;
+  text-align: center;
+  border-radius: 50%;
   width: fit-content;
   block-size: fit-content;
+  padding: 11% 11%;
+  padding-bottom: 1px;
+  border: 3px solid #f7882f;
 }
 
 /*---------------------------------------------*/
@@ -140,11 +155,15 @@ h1 {
 .skills {
   grid-area: skills;
   background-color: #bf4aa8;
-  border-radius: 20%;
+  border-radius: 50%;
   width: -moz-fit-content;
   height: -moz-fit-content;
   block-size: fit-content;
   text-align: center;
+  border: 3px solid #8bf0ba;
+}
+.skills h4 {
+  text-decoration-line: underline;
 }
 li {
   list-style-type: none;
@@ -184,13 +203,14 @@ span {
     border-radius: 20px;
   }
   .bio {
-    border-radius: 0%;
+    border-radius: 50%;
   }
   .more-bio {
-    border-radius: 0%;
+    border-radius: 50%;
+    padding: 10%;
   }
   .skills {
-    border-radius: 0%;
+    border-radius: 50%;
   }
 }
 
@@ -225,5 +245,14 @@ span {
     width: 250px;
     height: 250px;
     transform: rotate(360deg);
+  }
+  .bio {
+    border-radius: 0%;
+  }
+  .more-bio {
+    border-radius: 0%;
+  }
+  .skills {
+    border-radius: 0%;
   }
 }

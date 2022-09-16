@@ -1,5 +1,9 @@
 # 9-1-Front-end-portfolio-project
 
+## this project used an API
+
+## Getting started
+
 - To learn a few things about any country in the world, simply enter the name of the country in the input box and click search.
 
 - An API will fetch the information about the country you search.
