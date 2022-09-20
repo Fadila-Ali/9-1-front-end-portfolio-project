@@ -1,5 +1,6 @@
 // select form tag
 const form = document.querySelector("form");
+const error = document.querySelector("#error");
 
 // this is where the user inputted the name of the country
 const searchValue = document.querySelector("#country");
@@ -8,6 +9,7 @@ form.addEventListener("submit", (event) => {
   // Prevent default dehavior
   event.preventDefault();
 
+  error.style.display = "none";
   // grab the user input
   let userInput = searchValue.value;
 
@@ -18,7 +20,6 @@ form.addEventListener("submit", (event) => {
     .then((res) => res.json())
     .then((resJson) => {
       // this is the error message
-      const error = document.querySelector("#error");
       if (resJson.status && resJson.status === 404) {
         error.style.display = "block";
         return;
@@ -32,6 +33,11 @@ form.addEventListener("submit", (event) => {
       const main = document.querySelector(".main");
       main.innerHTML = "";
 
+      const h3 = document.createElement("h3");
+      h3.innerHTML = "Information";
+      h3.style.textDecorationLine = "underline";
+      main.append(h3);
+
       // get the name of the country
       const countryName = document.createElement("p");
       countryName.innerHTML = `<strong>Country: </strong>${resJson[0].name.common}`;
@@ -39,7 +45,7 @@ form.addEventListener("submit", (event) => {
 
       // get the capital city of country
       const countryCapital = document.createElement("p");
-      countryCapital.innerHTML = `<strong>Capital City(s): </strong>${resJson[0].capital}`;
+      countryCapital.innerHTML = `<strong>Capital City: </strong>${resJson[0].capital}`;
       main.append(countryCapital);
 
       // get continent in which country is located
@@ -104,12 +110,12 @@ form.addEventListener("submit", (event) => {
       const flagIn = document.createElement("div");
       const flagOut = document.createElement("div");
       innerFlag.append(flagIn, flagOut);
-      const h2Flag = document.createElement("h2");
-      h2Flag.innerHTML = "Flag";
+      const h3Flag = document.createElement("h3");
+      h3Flag.innerHTML = "Flag";
       const countryFlag = document.createElement("img");
       countryFlag.setAttribute("src", `${resJson[0].flags.png}`);
       countryFlag.setAttribute("alt", `The flag of ${resJson[0].name.common}`);
-      flagIn.appendChild(h2Flag);
+      flagIn.appendChild(h3Flag);
       flagOut.appendChild(countryFlag);
       // flag done
 
@@ -122,15 +128,15 @@ form.addEventListener("submit", (event) => {
       const coatIn = document.createElement("div");
       const coatOut = document.createElement("div");
       innerCoat.append(coatIn, coatOut);
-      const h2Coat = document.createElement("h2");
-      h2Coat.innerHTML = "Coat of Arms";
+      const h3Coat = document.createElement("h3");
+      h3Coat.innerHTML = "Coat of Arms";
       const coatOfArms = document.createElement("img");
       coatOfArms.setAttribute("src", `${resJson[0].coatOfArms.png}`);
       coatOfArms.setAttribute(
         "alt",
         `The coat of arms image of ${resJson[0].name.common}`
       );
-      coatIn.appendChild(h2Coat);
+      coatIn.appendChild(h3Coat);
       coatOut.appendChild(coatOfArms);
     })
     .catch((err) => console.log(err));

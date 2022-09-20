@@ -4,6 +4,7 @@ body {
   color: #000000;
   font-family: "Monaco";
   background-color: #ffffff;
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/04d53f80577741.5cf8b5c84827c.gif);
 }
 
 /* a div that contain all that is in the body */
@@ -48,9 +49,9 @@ header {
 header a {
   text-decoration-line: none;
   color: #bf4aa8;
-  font-size: large;
+  font-size: medium;
   font-weight: 600;
-  padding: 0;
+  padding: 1px;
   border: 1px solid #000000;
   border-radius: 10px;
   background-color: #ffffff;
@@ -77,6 +78,7 @@ h1 {
 @keyframes blinker {
   50% {
     opacity: 0;
+    color: #bf4aa8;
   }
 }
 
@@ -92,8 +94,9 @@ h1 {
 /* profile picture */
 .profile {
   grid-area: profile;
-  background-image: url(./Pursuit_9.1_-_Fadila_Ali209\ copy.jpg);
-  background-size: contain;
+  background-image: url(./IMG-1282.jpg);
+  background-size: cover;
+  background-position: 10%;
   background-repeat: no-repeat;
 }
 .profile {
@@ -102,7 +105,7 @@ h1 {
   display: block;
   width: 330px;
   height: 330px;
-  transition: width 2s, height 2s, background-color 2s, transform 2s;
+  transition: width 2s, height 2s, background-color 2s, transform 3s;
 }
 
 .profile:hover {
@@ -124,6 +127,10 @@ h1 {
   block-size: fit-content;
   padding: 10%;
   border: 3px solid #51d0de;
+  transition: transform 3s;
+}
+.bio:hover {
+  transform: rotate(360deg);
 }
 
 /* bio Pursuit a tag */
@@ -147,6 +154,10 @@ h3 a:hover {
   padding: 11% 11%;
   padding-bottom: 1px;
   border: 3px solid #f7882f;
+  transition: transform 3s;
+}
+.more-bio:hover {
+  transform: rotate(360deg);
 }
 
 /*---------------------------------------------*/
@@ -161,7 +172,12 @@ h3 a:hover {
   block-size: fit-content;
   text-align: center;
   border: 3px solid #8bf0ba;
+  transition: transform 3s;
 }
+.skills:hover {
+  transform: rotate(360deg);
+}
+
 .skills h4 {
   text-decoration-line: underline;
 }
