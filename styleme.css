@@ -1,9 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  overflow: hidden;
   height: 100vh;
   text-align: center;
-  color: #000000;
+  color: #ffffff;
   font-family: "Monaco";
   background-color: #ffffff;
+  background: linear-gradient(
+    to bottom left,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.1)
+  );
   background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/1400/04d53f80577741.5cf8b5c84827c.gif);
 }
 
@@ -29,8 +41,16 @@ header {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-areas: "goback blink contact";
-  background-color: #51d0de;
-  border-radius: 20px;
+  /* background-color: #51d0de; */
+  /* border: 3px solid #51d0de; */
+  background: linear-gradient(
+    to bottom left,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 255, 255, 0.2)
+  );
+  box-shadow: 2px 2px 20px rgba(122, 122, 122, 0.2);
+  padding: 1rem;
+  z-index: 1;
 }
 
 /*---------------------------------------------*/
@@ -100,7 +120,7 @@ h1 {
   background-repeat: no-repeat;
 }
 .profile {
-  border: 3px solid #bf4aa8;
+  border: 3px solid #f7882f;
   border-radius: 50%;
   display: block;
   width: 330px;
@@ -109,7 +129,7 @@ h1 {
 }
 
 .profile:hover {
-  border: 3px solid #feb300;
+  border: 3px solid #f7882f;
   width: 350px;
   height: 350px;
   transform: rotate(360deg);
@@ -120,22 +140,36 @@ h1 {
 /* code related bio */
 .bio {
   grid-area: bio;
-  background-color: #f7882f;
+  background: linear-gradient(
+    to right top,
+    rgba(0, 0, 0, 0.6),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(2rem);
   border-radius: 50%;
   text-align: center;
   width: fit-content;
   block-size: fit-content;
-  padding: 10%;
-  border: 3px solid #51d0de;
-  transition: transform 3s;
+  padding: 44px;
+  animation: animate 12s linear infinite;
+  box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.1);
 }
-.bio:hover {
-  transform: rotate(360deg);
+@keyframes animate {
+  0% {
+    transform: translateY(-100px);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
 }
 
 /* bio Pursuit a tag */
 h3 a {
   text-decoration-line: none;
+  color: aquamarine;
 }
 h3 a:hover {
   color: aqua;
@@ -146,18 +180,31 @@ h3 a:hover {
 /* other hubbies related bio */
 .more-bio {
   grid-area: more;
-  background-color: #8bf0ba;
   text-align: center;
   border-radius: 50%;
   width: fit-content;
   block-size: fit-content;
-  padding: 11% 11%;
-  padding-bottom: 1px;
-  border: 3px solid #f7882f;
-  transition: transform 3s;
+  padding: 12%;
+  background: linear-gradient(
+    to right top,
+    rgba(0, 0, 0, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(20rem);
+  box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.1);
+  animation: animate 8s linear infinite;
+  z-index: 5;
 }
-.more-bio:hover {
-  transform: rotate(360deg);
+@keyframes animate {
+  0% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /*---------------------------------------------*/
@@ -165,17 +212,31 @@ h3 a:hover {
 /* some skills */
 .skills {
   grid-area: skills;
-  background-color: #bf4aa8;
   border-radius: 50%;
   width: -moz-fit-content;
   height: -moz-fit-content;
   block-size: fit-content;
   text-align: center;
-  border: 3px solid #8bf0ba;
-  transition: transform 3s;
+  padding: 5%;
+  background: linear-gradient(
+    to right top,
+    rgba(0, 0, 0, 0.6),
+    rgba(255, 255, 255, 0.1)
+  );
+  animation: animate 18s linear infinite;
+  backdrop-filter: blur(20rem);
+  box-shadow: 6px 6px 20px rgba(255, 255, 255, 0.1);
 }
-.skills:hover {
-  transform: rotate(360deg);
+@keyframes animate {
+  0% {
+    transform: translateY(-100px);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
 }
 
 .skills h4 {
@@ -194,43 +255,10 @@ span {
 
 /*---------------------------------------------*/
 
-@media (max-width: 1230px) {
-  .all {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.1fr 0.5fr 0.5fr;
-    grid-gap: 10px 10px;
-    grid-template-areas:
-      "header header"
-      "profile bio"
-      "more skills";
-    height: 100vh;
+@media (max-width: 1200px) {
+  body {
+    overflow: scroll;
   }
-  header {
-    grid-area: header;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.5fr 0.1fr;
-    grid-template-areas:
-      "goback goback goback"
-      "blink blink blink"
-      "contact contact contact";
-    background-color: #51d0de;
-    border-radius: 20px;
-  }
-  .bio {
-    border-radius: 50%;
-  }
-  .more-bio {
-    border-radius: 50%;
-    padding: 10%;
-  }
-  .skills {
-    border-radius: 50%;
-  }
-}
-
-@media (max-width: 800px) {
   .all {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -263,12 +291,18 @@ span {
     transform: rotate(360deg);
   }
   .bio {
-    border-radius: 0%;
+    border-radius: 20px;
+    box-shadow: 8px 8px 20px rgba(255, 255, 255, 0.2);
+    animation: none;
   }
   .more-bio {
-    border-radius: 0%;
+    border-radius: 20px;
+    box-shadow: 8px 8px 20px rgba(255, 255, 255, 0.2);
+    animation: none;
   }
   .skills {
-    border-radius: 0%;
+    border-radius: 20px;
+    box-shadow: 8px 8px 20px rgba(255, 255, 255, 0.2);
+    animation: none;
   }
 }

@@ -1,7 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Monaco";
   height: 100vh;
   text-align: center;
+  background: linear-gradient(
+    to top right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3)
+  );
   background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/16c104116416103.6061cc85476eb.gif);
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,27 +36,29 @@ body {
 
 /*-----------------------------------------*/
 
+h1 {
+  margin-bottom: 1rem;
+}
 /* header */
 .header {
   grid-area: header;
-  height: 180px;
-  border: 3px solid #a0d2eb;
   background-color: #a0d2eb;
-  margin-right: 10px;
+  height: 150px;
 }
 
-form {
-  margin-top: -75px;
-}
 /*-----------------------------------------*/
 
 /* main content */
 .main {
   grid-area: main;
-  margin-right: 35%;
+  margin-right: 30%;
+  text-align: start;
+  padding-left: 2rem;
+  display: grid;
 }
 .main:hover {
   background-color: rgba(0, 0, 0, 0.441);
+  box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.2);
 }
 
 /*-----------------------------------------*/
@@ -57,6 +70,7 @@ form {
 }
 .side1:hover {
   background-color: rgba(0, 0, 0, 0.441);
+  box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.2);
 }
 
 /*-----------------------------------------*/
@@ -68,6 +82,7 @@ form {
 }
 .side2:hover {
   background-color: rgba(0, 0, 0, 0.441);
+  box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.2);
 }
 .side2 img {
   height: 250px;
@@ -88,7 +103,9 @@ ul {
 
 #country {
   border-radius: 50px;
-  border: 1px solid aliceblue;
+  border: none;
+  padding: 2px;
+  text-align: center;
 }
 #country:hover {
   border: 2px solid aqua;
@@ -96,7 +113,8 @@ ul {
 
 #submit-country {
   border-radius: 50px;
-  border: 2px solid aliceblue;
+  border: none;
+  padding: 2px;
 }
 #submit-country:hover {
   color: aqua;
@@ -106,23 +124,19 @@ ul {
 /*-----------------------------------------*/
 
 a {
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 20px;
   background-color: #000000;
   text-decoration-line: none;
-  font-size: large;
+  font-size: medium;
   color: #ffffff;
-  padding-right: 2px;
-  padding-left: 2px;
-  text-align: center;
-  position: relative;
-  right: 660px;
-  bottom: 70%;
+  margin-right: 84rem;
+  margin-bottom: 20rem;
 }
 
 a:hover {
   background-color: aliceblue;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   color: aqua;
   font-weight: 700;
 }
@@ -175,7 +189,6 @@ a:hover {
   text-align: center;
   color: red;
   display: none;
-  margin-top: -70px;
   font-size: medium;
 }
 

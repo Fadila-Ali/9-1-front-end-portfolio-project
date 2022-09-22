@@ -2,6 +2,15 @@
 const form = document.querySelector("form");
 const error = document.querySelector("#error");
 
+// this is where I want to display the main content
+const main = document.querySelector(".main");
+
+// this is where I want to display the flag
+const flagSide = document.querySelector(".side1");
+
+// this is where I want to display the coat of Arms
+const coatSide = document.querySelector(".side2");
+
 // this is where the user inputted the name of the country
 const searchValue = document.querySelector("#country");
 
@@ -22,15 +31,20 @@ form.addEventListener("submit", (event) => {
       // this is the error message
       if (resJson.status && resJson.status === 404) {
         error.style.display = "block";
+        main.innerHTML = "";
+        flagSide.innerHTML = "";
+        coatSide.innerHTML = "";
         return;
       }
       if (userInput === "") {
         error.style.display = "block";
+        main.innerHTML = "";
+        flagSide.innerHTML = "";
+        coatSide.innerHTML = "";
         return;
       }
 
-      // this is where I want to display the main content
-      const main = document.querySelector(".main");
+      // reset
       main.innerHTML = "";
 
       const h3 = document.createElement("h3");
@@ -101,10 +115,9 @@ form.addEventListener("submit", (event) => {
       }
       // main content done
 
-      // flag side
-      // get the flag of country
-      const flagSide = document.querySelector(".side1");
+      // flag side reset
       flagSide.innerHTML = "";
+      // get the flag of country
       const innerFlag = document.createElement("div");
       flagSide.append(innerFlag);
       const flagIn = document.createElement("div");
@@ -119,10 +132,9 @@ form.addEventListener("submit", (event) => {
       flagOut.appendChild(countryFlag);
       // flag done
 
-      // coat side
-      // get coat of arms
-      const coatSide = document.querySelector(".side2");
+      // coat side reset
       coatSide.innerHTML = "";
+      // get coat of arms
       const innerCoat = document.createElement("div");
       coatSide.append(innerCoat);
       const coatIn = document.createElement("div");
