@@ -92,13 +92,13 @@ header a:hover {
 }
 /* Make the Header text Blink */
 h1 {
-  animation: blinker 3s linear infinite;
+  animation: blinker 5s linear infinite;
 }
 
 @keyframes blinker {
   50% {
     opacity: 0;
-    color: #bf4aa8;
+    color: aqua;
   }
 }
 
@@ -250,7 +250,19 @@ ul {
 }
 
 span {
-  font-size: x-large;
+  font-size: xx-large;
+  animation: color-change 3s infinite;
+}
+@keyframes color-change {
+  0% {
+    color: #ffffff;
+  }
+  50% {
+    color: aqua;
+  }
+  100% {
+    color: #bf4aa8;
+  }
 }
 
 /*---------------------------------------------*/
